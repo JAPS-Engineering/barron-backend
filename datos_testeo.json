@@ -1,0 +1,35 @@
+{
+  "orders": [
+    {"id": "OT1001", "due": 12, "qty": 800, "cluster": 5, "format": "A"},
+    {"id": "OT1002", "due": 18, "qty": 500, "cluster": 4, "format": "B"},
+    {"id": "OT1003", "due": 20, "qty": 700, "cluster": 3, "format": "A"},
+    {"id": "OT1004", "due": 28, "qty": 1200, "cluster": 2, "format": "C"},
+    {"id": "OT1005", "due": 30, "qty": 600, "cluster": 4, "format": "B"},
+    {"id": "OT1006", "due": 40, "qty": 1500, "cluster": 1, "format": "A"},
+    {"id": "OT1007", "due": 45, "qty": 900, "cluster": 2, "format": "C"}
+  ],
+  "machines": {
+    "Linea_1": {
+      "capacity": 120,
+      "available_at": 0,
+      "last_format": null
+    },
+    "Linea_2": {
+      "capacity": 90,
+      "available_at": 0,
+      "last_format": null
+    }
+  },
+  "setup_times": {
+    "A-B": 1.5,
+    "B-A": 1.5,
+    "A-C": 2.0,
+    "C-A": 2.0,
+    "B-C": 1.0,
+    "C-B": 1.0
+  },
+  "horizonte_aprovechamiento": 12,
+  "costo_inventario_unitario": 0.002,
+  "default_setup_time": 1.5
+}
+
