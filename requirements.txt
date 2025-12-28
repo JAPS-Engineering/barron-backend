@@ -1,5 +1,7 @@
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
-requests==2.31.0
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+requests==2.32.3
+# Nota: Estas versiones tienen wheels precompilados para Python 3.12
+# runtime.txt especifica Python 3.12.7 para evitar problemas de compilación
 
