@@ -1,13 +1,27 @@
 from fastapi import FastAPI, HTTPException, APIRouter
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List, Dict, Optional, Tuple, Any
 from copy import deepcopy
 from datetime import datetime, timedelta
+import os
 
 app = FastAPI(
     title="Barron Production Scheduler API",
     description="API para programación heurística de producción",
     version="1.0.0"
+)
+
+# Configurar CORS para permitir requests del frontend
+# Si tienes variables de entorno, úsalas; si no, permite todos los orígenes (desarrollo)
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "*").split(",") if os.getenv("ALLOWED_ORIGINS") else ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Router con prefijo /api
